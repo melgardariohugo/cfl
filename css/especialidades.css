@@ -1,0 +1,204 @@
+:root{
+  --brand: #0077cc;
+  --brand-2: #127cc7;
+  --bg-grad-top: #b3e5fc;
+  --bg-grad-bottom: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --shadow: 0 10px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  position: relative;
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+.main-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  min-height: 90px;
+}
+
+.logo-holder{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(80px, 10vw, 120px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-video{
+  margin-top: 35px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+.logo-video video{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============ ESTILOS PERSONALIZADOS ESPECIALIDADES ============ */
+.especialidades-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.especialidad-bloque {
+  display: flex;
+  margin-bottom: 5px;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloque-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.img-izquierda {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.img-izquierda:hover {
+  transform: scale(1.05);
+}
+
+.img-derecha {
+  width: 300px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+@keyframes zoom-aleatorio {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.img-derecha.animada {
+  animation-name: zoom-aleatorio;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+.titulo-especialidad {
+  flex: 1;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--brand);
+  font-weight: bold;
+  animation: glow-pulse 2.5s ease-in-out infinite;
+  text-shadow: 0 0 5px var(--brand), 0 0 10px var(--brand-2);
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--brand), 0 0 10px var(--brand-2);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 2px var(--brand), 0 0 5px var(--brand-2);
+  }
+}
+
+.texto-especialidad {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s ease-in-out;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+  text-align: justify;
+  border-left: 4px solid var(--brand);
+  padding-left: 16px;
+  max-width: 800px;
+  white-space: pre-line;
+  animation: typing 3s steps(80, end);
+}
+
+.oculto {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
+
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .bloque-visual {
+    flex-direction: column;
+  }
+  .titulo-especialidad {
+    font-size: 1.5rem;
+  }
+  .img-derecha {
+    width: 100%;
+    height: auto;
+  }
+}
+
+

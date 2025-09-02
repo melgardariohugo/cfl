@@ -1,0 +1,165 @@
+:root{
+  --brand: #0077cc;
+  --brand-2: #127cc7;
+  --bg-grad-top: #b3e5fc;   /* celeste */
+  --bg-grad-bottom: #ffffff;/* blanco tenue */
+  --text: #1d1d1f;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --shadow: 0 10px 20px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+   position: relative;
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--text);
+
+}
+
+/* ============ HEADER ============ */
+.main-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;                     /* flex limpio */
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fff;                  /* fondo limpio del header */
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  min-height: 90px;                  /* espacio para logo/íconos */
+}
+
+/* Logo centrado real respecto al header */
+.logo-holder{
+  position: absolute;                /* centro visual real */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(80px, 10vw, 120px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;              /* no bloquea clics del menú/redes */
+  z-index: 1;                        /* debajo de íconos */
+}
+
+/* Video circular tipo “logo animado” */
+.logo-video{
+  margin-top: 35px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+.logo-video video{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Imagen de fallback (si la usas) */
+.logo{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* ============ BLOQUES DE CONTENIDO (BLOG) ============ */
+/* ===== INTRODUCCIÓN DEL CENTRO ===== */
+.intro-section {
+  max-width: 1000px;
+  margin: 60px auto 20px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.intro-title {
+  font-size: 2.8rem;
+  color: var(--brand);
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.intro-description {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+.main-content {
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px 20px;
+display: flex;
+flex-direction: column;
+gap: 60px;
+}
+
+
+.content-block {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 40px;
+}
+
+
+.content-block.reverse {
+flex-direction: row-reverse;
+}
+
+
+.block-img,
+.block-text {
+flex: 1 1 400px;
+}
+
+
+.block-img {
+height: 300px;
+overflow: hidden;
+}
+
+
+.block-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: var(--shadow);
+}
+
+
+.block-text h2 {
+font-size: 2rem;
+color: var(--brand);
+margin-bottom: 10px;
+}
+
+
+.block-text p {
+font-size: 1.1rem;
+line-height: 1.6;
+color: var(--text);
+text-align: justify;
+margin-bottom: 12px;
+}

@@ -1,0 +1,129 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CFL 407 - Docentes</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/inscripciones.css" />
+<link rel="shortcut icon" href="/frontend/imagen/iconos/favicomcfl.jpeg" 
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Scripts -->
+  <script defer src="../js/inscripciones.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo-holder" aria-label="Identidad del centro" style="pointer-events: auto;">
+      <a href="/index.html" style="display: block; width: 100%; height: 100%;">
+        <div class="logo-video">
+          <video preload="auto" id="logoVideo" autoplay loop playsinline muted>
+            <source src="../imagen/logo-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <section class="insc-wrap">
+  <form class="insc-card" novalidate>
+    <!-- Encabezado: logo + título en la misma línea -->
+    <div class="insc-head">
+      <img
+        src="../imagen/iconos/iconoalumnos (1).png"
+        alt="Logo CFL 407"
+        class="insc-logo"
+      />
+      <h1 class="insc-title">Ficha de Inscripción</h1>
+    </div>
+
+    <!-- Línea divisoria -->
+    <hr class="insc-divider">
+    <!-- ===== Campos ===== -->
+<div class="insc-grid">
+
+  <!-- ===== Campos (1 debajo del otro) ===== -->
+<div class="insc-grid-vertical">
+
+  <!-- Fecha -->
+  <div class="field">
+    <label for="f-fecha">Fecha</label>
+    <input id="f-fecha" name="fecha" type="date" readonly aria-readonly="true" />
+  </div>
+
+  <!-- Especialidad -->
+  <div class="field">
+    <label for="f-especialidad">Especialidad</label>
+    <select id="f-especialidad" name="especialidad" required>
+      <option value="" disabled selected>Seleccione una especialidad</option>
+      <option>Automatización Industrial</option>
+      <option>Electricidad Industrial</option>
+      <option>Mecánica y Encendido del Automotor</option>
+      <option>Pintura y Colorimetría del Automotor</option>
+    </select>
+  </div>
+
+  <!-- Apellido -->
+  <div class="field">
+    <label for="f-apellido">Apellido</label>
+    <input id="f-apellido" name="apellido" type="text" placeholder="Apellido" required />
+  </div>
+
+  <!-- Nombre/s -->
+  <div class="field">
+    <label for="f-nombres">Nombre/s</label>
+    <input id="f-nombres" name="nombres" type="text" placeholder="Nombre/s" required />
+  </div>
+
+  <!-- Género -->
+  <div class="field field-inline">
+    <span class="field-label">Género</span>
+    <label class="chk">
+      <input type="checkbox" id="chk-alumno" name="alumno" />
+      <span>Alumno</span>
+    </label>
+    <label class="chk">
+      <input type="checkbox" id="chk-alumna" name="alumna" />
+      <span>Alumna</span>
+    </label>
+  </div>
+
+  <!-- DNI -->
+  <div class="field">
+    <label for="f-dni">Nro. DNI</label>
+    <input id="f-dni" name="dni" type="text" inputmode="numeric" placeholder="Nro. DNI" required />
+  </div>
+
+  <!-- Móvil -->
+  <div class="field">
+    <label for="f-movil">Nro. Móvil</label>
+    <input id="f-movil" name="movil" type="tel" placeholder="Nro. Móvil" />
+  </div>
+
+  <!-- Correo -->
+  <div class="field">
+    <label for="f-correo">Correo</label>
+    <input id="f-correo" name="correo" type="email" placeholder="correo@ejemplo.com" required />
+  </div>
+
+  <!-- Botones -->
+  <div class="insc-actions">
+    <button id="btn-guardar" class="btn btn-primary" type="submit">
+      <i class="fa-solid fa-floppy-disk"></i>
+      <span>Guardar</span>
+    </button>
+    <button id="btn-limpiar-form" class="btn btn-ghost" type="button">
+      <i class="fa-solid fa-broom"></i>
+      <span>Limpiar</span>
+    </button>
+  </div>
+
+</div>
+
+
+</body>
+</html>
+
